@@ -33,7 +33,7 @@ ex:
   sh:property [
       rdf:type sh:PropertyShape ;
       sh:path rdfs:label ;
-    sh:datatype rdf:langString;
+    sh:datatype xsd:string;
       sh:maxCount 1 ;
       sh:minCount 1 ;
     ] ;
