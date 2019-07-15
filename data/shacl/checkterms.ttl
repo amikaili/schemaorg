@@ -20,7 +20,8 @@ ex:
 		sh:namespace "http://schema.org/"^^xsd:anyURI ;
 	] .
 
-:Types a sh:NodeShape, rdfs:Class ;
+:Type a sh:NodeShape, rdfs:Class ;
+   sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:target [
 		a sh:SPARQLTarget ;
 		sh:prefixes ex: ;
@@ -31,11 +32,6 @@ ex:
          }
 		""" ;
 	] ;
-	sh:nodeKind :Type;
-
-.
-:Type a sh:NodeShape, rdfs:Class ;
-   sh:nodeKind sh:BlankNodeOrIRI ;
   sh:property [
       rdf:type sh:PropertyShape ;
       sh:path rdfs:label ;
@@ -68,7 +64,7 @@ ex:
     ] ;
   sh:property [
       sh:path schema:supersededBy ;
-       sh:nodeKind :Type;
+       sh:nodeKind sh:IRI;
     ] ;
   sh:property [
       sh:path skos:exactMatch ;
