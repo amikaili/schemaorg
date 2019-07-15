@@ -160,7 +160,7 @@ sh:nodeKind sh:BlankNodeOrIRI;
 		sh:prefixes ex: ;
 		sh:select """
         SELECT DISTINCT ?this WHERE {
-        ?this a rdf:Property.
+        ?this a rdf:Property .
          }
 		""" ;
 	] ;
