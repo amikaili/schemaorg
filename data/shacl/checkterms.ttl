@@ -159,6 +159,8 @@ sh:nodeKind sh:BlankNodeOrIRI;
 		a sh:SPARQLTarget ;
 		sh:prefixes ex: ;
 		sh:select """
+		prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
         SELECT DISTINCT ?this WHERE {
         ?this a rdf:Property .
          }
