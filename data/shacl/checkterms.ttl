@@ -32,6 +32,10 @@ ex:
          }
 		""" ;
 	] ;
+      sh:or (
+      [ sh:datatype xsd:string; ]
+      [ sh:datatype rdf:langString; ]
+      );
   sh:property [
       sh:path rdfs:subClassOf ;
       sh:minCount 1 ;
