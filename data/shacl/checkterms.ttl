@@ -34,10 +34,7 @@ ex:
 	] ;
   sh:property [
       sh:path rdfs:label ;
-      sh:or (
-      [sh:datatype xsd:string; ]
-      [ sh:datatype rdf:langString; ]
-      )
+      sh:datatype xsd:string; ]
       sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
