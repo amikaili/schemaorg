@@ -33,12 +33,6 @@ ex:
 		""" ;
 	] ;
   sh:property [
-      sh:path rdfs:label ;
-      sh:datatype xsd:string; 
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
       sh:path rdfs:subClassOf ;
       sh:minCount 1 ;
     ] ;
