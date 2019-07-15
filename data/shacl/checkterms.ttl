@@ -7,6 +7,8 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfa:  <http://www.w3.org/ns/rdfa#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 ex:
 	sh:declare [
@@ -40,5 +42,44 @@ ex:
   sh:property [
       sh:path rdfs:subClassOf ;
       sh:minCount 1 ;
+    ] ;
+  sh:property [
+      sh:path dct:source ;
+       sh:nodeKind sh:IRI;
+    ] ;
+  sh:property [
+      sh:path schema:category ;
+      sh:datatype xsd:string;
+    ] ;
+ sh:property [
+      sh:path schema:isPartOf ;
+      sh:in ( <http://attic.schema.org> 
+	     <http://auto.schema.org> 
+	     <http://bib.schema.org>
+	     <http://health-lifesci.schema.org>
+	     <http://iot.schema.org>
+	     <http://meta.schema.org>
+	     <http://pending.schema.org>
+	    );
+    ] ;
+  sh:property [
+      sh:path schema:supersededBy ;
+       sh:nodeKind :Type;
+    ] ;
+  sh:property [
+      sh:path skos:exactMatch ;
+       sh:nodeKind sh:IRI;
+    ] ;
+  sh:property [
+      sh:path skos:closeMatch ;
+       sh:nodeKind sh:IRI;
+    ] ;
+  sh:property [
+      sh:path schema:sameAs ;
+       sh:nodeKind :sh:IRI;
+    ] ;
+  sh:property [
+      sh:path owl:equivalentClass;
+       sh:nodeKind :sh:IRI;
     ] ;
 .
