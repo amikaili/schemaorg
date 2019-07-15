@@ -39,6 +39,7 @@ ex:
       [ sh:datatype rdf:langString; ]
       );
       sh:minCount 1 ;
+      sh:maxCount 1 ;
     ] ;
   sh:property [
       sh:path rdfs:comment ;
@@ -47,7 +48,8 @@ ex:
       [ sh:datatype rdf:langString; ]
       );
       sh:minCount 1 ;
-    ] ;
+      sh:maxCount 1 ;
+     ] ;
   sh:property [
       sh:path rdfs:subClassOf ;
       sh:minCount 1 ;
