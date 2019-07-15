@@ -20,52 +20,44 @@ ex:
 		sh:namespace "http://schema.org/"^^xsd:anyURI ;
 	] .
 
-:Type a sh:NodeShape, rdfs:Class ;
-   sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:target [
-		a sh:SPARQLTarget ;
-		sh:prefixes ex: ;
-		sh:select """
-        SELECT DISTINCT ?this WHERE {
-        ?this a rdfs:Class;
-          rdfs:subClassOf* schema:Thing.
-         }
-		""" ;
-	] ;
-  sh:property [
+:labelShape a sh:PropertyShape ;
       sh:path rdfs:label ;
       sh:or (
       [ sh:datatype xsd:string; ]
       [ sh:datatype rdf:langString; ]
       );
       sh:minCount 1 ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
+      sh:maxCount 1 
+	  .
+
+:commentShape a sh:PropertyShape ;
       sh:path rdfs:comment ;
       sh:or (
       [ sh:datatype xsd:string; ]
       [ sh:datatype rdf:langString; ]
       );
+	  sh:pattern ".*\\.$";
       sh:minCount 1 ;
       sh:maxCount 1 ;
-     ] ;
-  sh:property [
+     .
+:subClassOfShape a sh:PropertyShape ;
       sh:path rdfs:subClassOf ;
       sh:minCount 1 ;
-    ] ;
-  sh:property [
+      .
+
+:sourceShape  a sh:PropertyShape ;
       sh:path dct:source ;
       sh:nodeKind sh:IRI;
-    ] ;
-  sh:property [
+      .
+
+:categoryShape  a sh:PropertyShape ;
       sh:path schema:category ;
       sh:or (
       [ sh:datatype xsd:string; ]
       [ sh:datatype rdf:langString; ]
       );
-   ] ;
- sh:property [
+      .
+:isPartOfShape  a sh:PropertyShape ;
       sh:path schema:isPartOf ;
       sh:in ( <http://attic.schema.org> 
 	     <http://auto.schema.org> 
@@ -75,25 +67,53 @@ ex:
 	     <http://meta.schema.org>
 	     <http://pending.schema.org>
 	    );
-    ] ;
-  sh:property [
+      .
+
+:supersededByShape   a sh:PropertyShape ;
       sh:path schema:supersededBy ;
-       sh:nodeKind sh:IRI;
-    ] ;
-  sh:property [
+      sh:nodeKind sh:IRI;
+      .
+
+:exactMatchShape a sh:PropertyShape ;
       sh:path skos:exactMatch ;
-       sh:nodeKind sh:IRI;
-    ] ;
-  sh:property [
+      sh:nodeKind sh:IRI;
+      .
+
+:closeMatchShape a sh:PropertyShape ;
       sh:path skos:closeMatch ;
-       sh:nodeKind sh:IRI;
-    ] ;
-  sh:property [
+      sh:nodeKind sh:IRI;
+      .
+:sameAsShape  a sh:PropertyShape ;
       sh:path schema:sameAs ;
-       sh:nodeKind sh:IRI;
-    ] ;
-  sh:property [
-      sh:path owl:equivalentClass;
-       sh:nodeKind sh:IRI;
-    ] ;
-.
+      sh:nodeKind sh:IRI;
+      .
+
+:equivalentClassShape a sh:PropertyShape ;
+  sh:path owl:equivalentClass  ;
+ sh:nodeKind sh:IRI .
+
+:Type a sh:NodeShape, rdfs:Class ;
+   sh:nodeKind sh:BlankNodeOrIRI ;
+   sh:target [
+		a sh:SPARQLTarget ;
+		sh:prefixes ex: ;
+		sh:select """
+        SELECT DISTINCT ?this WHERE {
+        ?this a rdfs:Class;
+          rdfs:subClassOf* schema:Thing.
+         }
+		""" ;
+	] ;
+sh:property :labelShape,
+	:commentShape,
+	:subClassOfShape,
+	:sourceShape,
+	:categoryShape,
+	:isPartOfShape,
+	:supersededByShape,
+	:exactMatchShape,
+	:closeMatchShape,
+	:sameAsShape,
+	:equivalentClassShape
+   .
+
