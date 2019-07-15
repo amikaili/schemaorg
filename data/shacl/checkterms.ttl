@@ -32,24 +32,33 @@ ex:
          }
 		""" ;
 	] ;
+  sh:property [
+      sh:path rdfs:label ;
       sh:or (
       [ sh:datatype xsd:string; ]
       [ sh:datatype rdf:langString; ]
       );
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      sh:path rdfs:comment ;
+      sh:or (
+      [ sh:datatype xsd:string; ]
+      [ sh:datatype rdf:langString; ]
+      );
+      sh:minCount 1 ;
+    ] ;
   sh:property [
       sh:path rdfs:subClassOf ;
       sh:minCount 1 ;
     ] ;
   sh:property [
       sh:path dct:source ;
-       sh:nodeKind sh:IRI;
+      sh:nodeKind sh:IRI;
     ] ;
   sh:property [
       sh:path schema:category ;
-      sh:or (
-      [ sh:datatype xsd:string; ]
-      [ sh:datatype rdf:langString; ]
-      );
+      sh:datatype xsd:string;
     ] ;
  sh:property [
       sh:path schema:isPartOf ;
