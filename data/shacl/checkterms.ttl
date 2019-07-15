@@ -37,11 +37,10 @@ ex:
       [ sh:datatype xsd:string; ]
       [ sh:datatype rdf:langString; ]
       );
-      sh:pattern ".*\\.$";
+	  sh:pattern ".*\\.$";
       sh:minCount 1 ;
       sh:maxCount 1 ;
      .
-
 :subClassOfShape a sh:PropertyShape ;
       sh:path rdfs:subClassOf ;
 	  sh:node :Type;
@@ -73,10 +72,14 @@ ex:
 	    );
       .
 
-:supersededByShape   a sh:PropertyShape ;
+:supersededByTypeShape   a sh:PropertyShape ;
       sh:path schema:supersededBy ;
-      sh:nodeKind sh:IRI;
+      sh:class rdfs:Class;
       .
+:supersededByPropertyShape   a sh:PropertyShape ;
+      sh:path schema:supersededBy ;
+      sh:class rdf:Property;
+    .
 
 :exactMatchShape a sh:PropertyShape ;
       sh:path skos:exactMatch ;
@@ -96,8 +99,22 @@ ex:
   sh:path owl:equivalentClass  ;
  sh:nodeKind sh:IRI .
 
+:rangeIncludesShape a sh:PropertyShape ;
+	sh:path schema:rangeIncludes  ;
+ 	sh:node :Type; 
+    sh:minCount 1 ;
+.
+:domainIncludesShape a sh:PropertyShape ;
+	sh:path schema:rangeIncludes  ;
+ 	sh:node :Type; 
+.
+:inverseOfShape a sh:PropertyShape ;
+	sh:path schema:inverseOf  ;
+ 	sh:node :Prop; 
+.
+
 :Types a sh:NodeShape, rdfs:Class ;
-   sh:nodeKind sh:BlankNodeOrIRI ;
+sh:nodeKind sh:BlankNodeOrIRI;
    sh:target [
 		a sh:SPARQLTarget ;
 		sh:prefixes ex: ;
@@ -113,24 +130,69 @@ sh:property :labelShape,
 			:sourceShape,
 			:categoryShape,
 			:isPartOfShape,
-			:supersededByShape,
+			:supersededByTypeShape,
 			:exactMatchShape,
 			:closeMatchShape,
 			:sameAsShape,
    			:subClassOfShape,
 			:equivalentClassShape
 .
-:Type a sh:NodeShape ;
+
+
+:Type a sh:NodeShape, rdfs:Class ;
+sh:nodeKind sh:BlankNodeOrIRI;
+sh:property  :labelShape,
+			:commentShape,
+			:sourceShape,
+			:categoryShape,
+			:isPartOfShape,
+			:supersededByTypeShape,
+			:exactMatchShape,
+			:closeMatchShape,
+			:sameAsShape,
+			:equivalentClassShape
+   .
+
+:Properties a sh:NodeShape, rdfs:Class ;
+sh:nodeKind sh:BlankNodeOrIRI;
+   sh:target [
+		a sh:SPARQLTarget ;
+		sh:prefixes ex: ;
+		sh:select """
+        SELECT DISTINCT ?this WHERE {
+        ?this a rdf:Property.
+         }
+		""" ;
+	] ;
+sh:property :labelShape,
+			:commentShape,
+			:sourceShape,
+			:categoryShape,
+			:isPartOfShape,
+			:supersededByPropertyShape,
+			:exactMatchShape,
+			:closeMatchShape,
+			:sameAsShape,
+			:domainIncludesShape,
+			:rangeIncludesShape,
+			:inverseOfShape
+.
+
+:Prop a sh:NodeShape, rdfs:Class ;
 sh:nodeKind sh:BlankNodeOrIRI;
 sh:property :labelShape,
 			:commentShape,
 			:sourceShape,
 			:categoryShape,
 			:isPartOfShape,
-			:supersededByShape,
+			:supersededByPropertyShape,
 			:exactMatchShape,
 			:closeMatchShape,
 			:sameAsShape,
-			:equivalentClassShape
-   .
+			:domainIncludesShape,
+			:rangeIncludesShape,
+			:inverseOfShape
+.
+
+
 
