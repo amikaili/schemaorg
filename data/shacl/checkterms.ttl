@@ -12,6 +12,10 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 ex:
 	sh:declare [
+		sh:prefix "rdf" ;
+		sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
+	];
+	sh:declare [
 		sh:prefix "rdfs" ;
 		sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
 	];
@@ -158,8 +162,6 @@ sh:nodeKind sh:BlankNodeOrIRI;
 		a sh:SPARQLTarget ;
 		sh:prefixes ex: ;
 		sh:select """
-		prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-
         SELECT DISTINCT ?this WHERE {
         ?this a rdf:Property .
          }
