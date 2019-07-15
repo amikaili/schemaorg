@@ -39,6 +39,7 @@ ex:
       sh:minCount 1 ;
       sh:maxCount 1 ;
      .
+
 :subClassOfShape a sh:PropertyShape ;
       sh:path rdfs:subClassOf ;
 	  sh:node :Type;
