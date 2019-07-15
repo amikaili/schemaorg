@@ -76,10 +76,10 @@ ex:
     ] ;
   sh:property [
       sh:path schema:sameAs ;
-       sh:nodeKind :sh:IRI;
+       sh:nodeKind sh:IRI;
     ] ;
   sh:property [
       sh:path owl:equivalentClass;
-       sh:nodeKind :sh:IRI;
+       sh:nodeKind sh:IRI;
     ] ;
 .
