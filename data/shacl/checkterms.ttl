@@ -42,7 +42,7 @@ ex:
     ] ;
   sh:property [
       sh:path dct:source ;
-       sh:nodeKind xsd:string;
+       sh:nodeKind sh:IRI;
     ] ;
   sh:property [
       sh:path schema:category ;
