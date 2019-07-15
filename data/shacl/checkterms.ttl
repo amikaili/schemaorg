@@ -36,6 +36,7 @@ ex:
       [ sh:datatype xsd:string; ]
       [ sh:datatype rdf:langString; ]
       );
+      sh:pattern ".*\\.$";
       sh:minCount 1 ;
       sh:maxCount 1 ;
      .
