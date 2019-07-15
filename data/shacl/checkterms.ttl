@@ -58,8 +58,11 @@ ex:
     ] ;
   sh:property [
       sh:path schema:category ;
-      sh:datatype xsd:string;
-    ] ;
+      sh:or (
+      [ sh:datatype xsd:string; ]
+      [ sh:datatype rdf:langString; ]
+      );
+   ] ;
  sh:property [
       sh:path schema:isPartOf ;
       sh:in ( <http://attic.schema.org> 
