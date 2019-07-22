@@ -150,7 +150,7 @@ sh:nodeKind sh:BlankNodeOrIRI;
 		sh:prefixes ex: ;
 		sh:select """
         SELECT DISTINCT ?this WHERE {  
-	   ?this rdfs:subClassOf*/rdf:type|rdf:type* schema:DataType
+	   ?this rdfs:subClassOf*/rdf:type|rdf:type* schema:DataType.
          }
 		""" ;
 	] ;
