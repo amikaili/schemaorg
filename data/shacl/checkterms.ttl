@@ -118,7 +118,7 @@ ex:
  	sh:node :Prop; 
 .
 
-:Type a sh:NodeShape, rdfs:Class ;
+:Types a sh:NodeShape, rdfs:Class ;
 sh:nodeKind sh:BlankNodeOrIRI;
    sh:target [
 		a sh:SPARQLTarget ;
@@ -130,6 +130,21 @@ sh:nodeKind sh:BlankNodeOrIRI;
          }
 		""" ;
 	] ;
+	sh:property :labelShape,
+			:commentShape,
+			:sourceShape,
+			:categoryShape,
+			:isPartOfShape,
+			:supersededByTypeShape,
+			:exactMatchShape,
+			:closeMatchShape,
+			:sameAsShape,
+   			:subClassOfShape,
+			:equivalentClassShape
+.
+
+:Type a sh:NodeShape, rdfs:Class ;
+sh:nodeKind sh:BlankNodeOrIRI;
 	sh:property :labelShape,
 			:commentShape,
 			:sourceShape,
