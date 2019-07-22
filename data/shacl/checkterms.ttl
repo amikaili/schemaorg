@@ -106,11 +106,11 @@ ex:
 
 :rangeIncludesShape a sh:PropertyShape ;
 	sh:path schema:rangeIncludes  ;
- sh:node :DataType; 
-    sh:minCount 1 ;
+ 	sh:node :DataType; 
+    	sh:minCount 1 ;
 .
 :domainIncludesShape a sh:PropertyShape ;
-	sh:path schema:rangeIncludes  ;
+	sh:path schema:domainIncludes  ;
  	sh:node :Type; 
 .
 :inverseOfShape a sh:PropertyShape ;
@@ -130,7 +130,7 @@ sh:nodeKind sh:BlankNodeOrIRI;
          }
 		""" ;
 	] ;
-sh:property :labelShape,
+	sh:property :labelShape,
 			:commentShape,
 			:sourceShape,
 			:categoryShape,
@@ -154,23 +154,8 @@ sh:nodeKind sh:BlankNodeOrIRI;
          }
 		""" ;
 	] ;
-sh:property :labelShape,:commentShape
+	sh:property :labelShape,:commentShape
 .
-
-
-:Typex a sh:NodeShape, rdfs:Class ;
-sh:nodeKind sh:BlankNodeOrIRI;
-sh:property  :labelShape,
-			:commentShape,
-			:sourceShape,
-			:categoryShape,
-			:isPartOfShape,
-			:supersededByTypeShape,
-			:exactMatchShape,
-			:closeMatchShape,
-			:sameAsShape,
-			:equivalentClassShape
-   .
 
 :Prop a sh:NodeShape, rdfs:Class ;
 sh:nodeKind sh:BlankNodeOrIRI;
@@ -183,7 +168,7 @@ sh:nodeKind sh:BlankNodeOrIRI;
          }
 		""" ;
 	] ;
-sh:property :labelShape,
+	sh:property :labelShape,
 			:commentShape,
 			:sourceShape,
 			:categoryShape,
