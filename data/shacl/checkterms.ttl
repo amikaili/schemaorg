@@ -154,9 +154,7 @@ sh:nodeKind sh:BlankNodeOrIRI;
          }
 		""" ;
 	] ;
-sh:property :labelShape,
-			:commentShape,
-			:sourceShape,
+sh:property :labelShape,:commentShape
 .
 
 
