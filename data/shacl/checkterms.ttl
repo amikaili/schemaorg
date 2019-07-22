@@ -182,21 +182,6 @@ sh:nodeKind sh:BlankNodeOrIRI;
 			:inverseOfShape
 .
 
-:Propx a sh:NodeShape, rdfs:Class ;
-sh:nodeKind sh:BlankNodeOrIRI;
-sh:property :labelShape,
-			:commentShape,
-			:sourceShape,
-			:categoryShape,
-			:isPartOfShape,
-			:supersededByPropertyShape,
-			:exactMatchShape,
-			:closeMatchShape,
-			:sameAsShape,
-			:domainIncludesShape,
-			:rangeIncludesShape,
-			:inverseOfShape
-.
 
 
 
