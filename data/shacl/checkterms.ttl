@@ -125,7 +125,7 @@ sh:nodeKind sh:BlankNodeOrIRI;
 		sh:select """
         SELECT DISTINCT ?this WHERE {
         ?this a rdfs:Class;
-          rdfs:subClassOf* schema:Thing.
+          rdfs:subClassOf+ schema:Thing.
          }
 		""" ;
 	] ;
