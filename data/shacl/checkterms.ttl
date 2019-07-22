@@ -143,6 +143,22 @@ sh:property :labelShape,
 			:equivalentClassShape
 .
 
+:DataType a sh:NodeShape, rdfs:Class ;
+sh:nodeKind sh:BlankNodeOrIRI;
+   sh:target [
+		a sh:SPARQLTarget ;
+		sh:prefixes ex: ;
+		sh:select """
+        SELECT DISTINCT ?this WHERE {  
+	   ?this rdfs:subClassOf*/rdf:type|rdf:type* schema:DataType
+         }
+		""" ;
+	] ;
+sh:property :labelShape,
+			:commentShape,
+			:sourceShape,
+.
+
 
 :Typex a sh:NodeShape, rdfs:Class ;
 sh:nodeKind sh:BlankNodeOrIRI;
@@ -158,7 +174,7 @@ sh:property  :labelShape,
 			:equivalentClassShape
    .
 
-:Properties a sh:NodeShape, rdfs:Class ;
+:Prop a sh:NodeShape, rdfs:Class ;
 sh:nodeKind sh:BlankNodeOrIRI;
    sh:target [
 		a sh:SPARQLTarget ;
@@ -183,7 +199,7 @@ sh:property :labelShape,
 			:inverseOfShape
 .
 
-:Prop a sh:NodeShape, rdfs:Class ;
+:Propx a sh:NodeShape, rdfs:Class ;
 sh:nodeKind sh:BlankNodeOrIRI;
 sh:property :labelShape,
 			:commentShape,
