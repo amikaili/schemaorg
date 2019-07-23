@@ -145,7 +145,7 @@ sh:nodeKind sh:BlankNodeOrIRI;
 
 :Type a sh:NodeShape, rdfs:Class ;
 sh:nodeKind sh:BlankNodeOrIRI;
-	sh:property :labelShape,
+sh:property  :labelShape,
 			:commentShape,
 			:sourceShape,
 			:categoryShape,
@@ -154,8 +154,21 @@ sh:nodeKind sh:BlankNodeOrIRI;
 			:exactMatchShape,
 			:closeMatchShape,
 			:sameAsShape,
-   			:subClassOfShape,
 			:equivalentClassShape
+   .
+
+:Types a sh:NodeShape, rdfs:Class ;
+   sh:target [
+		a sh:SPARQLTarget ;
+		sh:prefixes ex: ;
+		sh:select """
+        SELECT DISTINCT ?this WHERE {
+        ?this a rdfs:Class;
+          rdfs:subClassOf+ schema:Thing.
+         }
+		""" ;
+	] ;
+    rdfs:subClassOf :Type
 .
 
 :DataType a sh:NodeShape, rdfs:Class ;
