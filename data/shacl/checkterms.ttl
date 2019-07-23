@@ -118,30 +118,7 @@ ex:
  	sh:node :Prop; 
 .
 
-:Types a sh:NodeShape, rdfs:Class ;
-sh:nodeKind sh:BlankNodeOrIRI;
-   sh:target [
-		a sh:SPARQLTarget ;
-		sh:prefixes ex: ;
-		sh:select """
-        SELECT DISTINCT ?this WHERE {
-        ?this a rdfs:Class;
-          rdfs:subClassOf+ schema:Thing.
-         }
-		""" ;
-	] ;
-	sh:property :labelShape,
-			:commentShape,
-			:sourceShape,
-			:categoryShape,
-			:isPartOfShape,
-			:supersededByTypeShape,
-			:exactMatchShape,
-			:closeMatchShape,
-			:sameAsShape,
-   			:subClassOfShape,
-			:equivalentClassShape
-.
+
 
 :Type a sh:NodeShape, rdfs:Class ;
 sh:nodeKind sh:BlankNodeOrIRI;
@@ -155,7 +132,7 @@ sh:property  :labelShape,
 			:closeMatchShape,
 			:sameAsShape,
 			:equivalentClassShape
-   .
+.
 
 :Types a sh:NodeShape, rdfs:Class ;
    sh:target [
