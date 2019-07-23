@@ -127,14 +127,7 @@ ex:
 sh:nodeKind sh:BlankNodeOrIRI;
 sh:property  :labelShape,
 			:commentShape,
-			:sourceShape,
-			:categoryShape,
-			:isPartOfShape,
-			:supersededByTypeShape,
-			:exactMatchShape,
-			:closeMatchShape,
-			:sameAsShape,
-			:equivalentClassShape
+			:sourceShape
 .
 
 :Types a sh:NodeShape, rdfs:Class ;
