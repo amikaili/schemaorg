@@ -150,6 +150,18 @@ sh:property  :labelShape,
 
 :DataType a sh:NodeShape, rdfs:Class ;
 sh:nodeKind sh:BlankNodeOrIRI;
+	sh:property [
+		sh:path rdf:type;
+		sh:class schema:DataType;
+	
+	],:labelShape,:commentShape
+.
+
+:DataTypes a sh:NodeShape, rdfs:Class ;
+sh:nodeKind sh:BlankNodeOrIRI;
+.
+:DataTypes a sh:NodeShape, rdfs:Class ;
+sh:nodeKind sh:BlankNodeOrIRI;
    sh:target [
 		a sh:SPARQLTarget ;
 		sh:prefixes ex: ;
@@ -159,7 +171,7 @@ sh:nodeKind sh:BlankNodeOrIRI;
          }
 		""" ;
 	] ;
-	sh:property :labelShape,:commentShape
+rdfs:subClassOf :DataType
 .
 
 :Prop a sh:NodeShape, rdfs:Class ;
