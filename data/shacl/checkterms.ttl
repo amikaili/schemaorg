@@ -145,7 +145,6 @@ sh:property  :labelShape,
 .
 
 :DataType a sh:NodeShape, rdfs:Class ;
-sh:nodeKind sh:BlankNodeOrIRI;
 	sh:property [ 
 		sh:path rdf:type;
 		sh:class schema:DataType; 
