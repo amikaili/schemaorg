@@ -23,7 +23,8 @@ ex:
 	sh:declare [
 		sh:prefix "schema" ;
 		sh:namespace "http://schema.org/"^^xsd:anyURI ;
-	] .
+	] 
+.
 
 :labelShape a sh:PropertyShape ;
       sh:path rdfs:label ;
