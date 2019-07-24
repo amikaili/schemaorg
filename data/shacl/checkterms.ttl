@@ -113,11 +113,13 @@ ex:
       	);
     	sh:minCount 1 ;
 .
+
 :domainIncludesShape a sh:PropertyShape ;
 	sh:path schema:domainIncludes  ;
  	sh:node :Type; 
     	sh:minCount 1 
 .
+
 :inverseOfShape a sh:PropertyShape ;
 	sh:path schema:inverseOf  ;
  	sh:node :Prop; 
