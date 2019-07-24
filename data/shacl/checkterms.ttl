@@ -150,8 +150,9 @@ sh:property  :labelShape,
 .
 
 :DataType a sh:NodeShape, rdfs:Class ;
+sh:nodeKind sh:BlankNodeOrIRI;
 	sh:property [ 
-		  sh:path ([ sh:zeroOrMorePath rdfs:subClassOf ] rdf:type);
+		  sh:path ( [ sh:zeroOrMorePath rdfs:subClassOf ] rdf:type );
 		  sh:class schema:DataType;
  	],:labelShape,:commentShape
 .
