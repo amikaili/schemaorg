@@ -108,10 +108,8 @@ ex:
 
 :rangeIncludesShape a sh:PropertyShape ;
 	sh:path schema:rangeIncludes  ;
-      	sh:or(
-	      [ sh:node :Type; ]
-	      [ sh:node :DataType; ]
-      	);
+	sh:node 
+      	sh:in( :Type :DataType);
     	sh:minCount 1 ;
 .
 
