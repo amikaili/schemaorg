@@ -154,7 +154,7 @@ sh:property  :labelShape,
 		   sh:or (
 		      [ sh:path rdf:type;
 				sh:class schema:DataType; ]
-		      [ sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] rdf:type
+		      [ sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] rdf:type;
 				sh:class schema:DataType;]
 		      );
  	],:labelShape,:commentShape
