@@ -115,6 +115,7 @@ ex:
 :domainIncludesShape a sh:PropertyShape ;
 	sh:path schema:domainIncludes  ;
  	sh:node :Type; 
+    	sh:minCount 1 
 .
 :inverseOfShape a sh:PropertyShape ;
 	sh:path schema:inverseOf  ;
